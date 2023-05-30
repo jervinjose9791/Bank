@@ -1,0 +1,54 @@
+import java.util.*;
+class Bank{
+	public static int credit ,debit ,balance=0;
+	public static Scanner s =new Scanner(System.in);
+	public static void main(String [] args)throws Exception
+	{
+		while(true) {
+		System.out.println("::::::::Welcome to the bank::::");
+		Thread.sleep(500);
+		System.out.println("1.credit\n2.debit\n3.balance\n4.Exit");	
+		switch(s.nextInt())
+		
+		{
+		case 1:{
+			
+			System.out.println("Enter the number you want to credit\n---");
+			Thread.sleep(200);
+			if(credit%2==0) {
+			credit=s.nextInt();
+			
+			balance=credit+balance;
+			
+			System.out.println("Your total balance after credit:\n"+balance);}
+			else 
+				System.out.println("invalid credit");
+		break;
+		}
+		case 2:{
+			
+			System.out.println("Enter the number you want to debit\n---");
+			Thread.sleep(200);
+			debit=s.nextInt();
+			if(debit<=balance) {
+			
+			balance=balance-debit ;
+			System.out.println("The remaining balance in the bank::\n"+balance);}
+			else 
+				System.out.println("insufficient balance");
+				
+		break;
+		}
+		case 3:{
+			System.out.println("Your bank balance is:::\n"+balance);
+			break;
+		}
+		case 4:{
+			System.out.println("Exiting.......");
+			System.exit(0);
+		}
+		
+		}
+	    }
+		}
+}
